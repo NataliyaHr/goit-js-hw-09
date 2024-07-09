@@ -2,9 +2,9 @@ const formData = {
   email: "",
   message: "",
 
-  setFormValue(newemail, newmessage) {
-    this.email = newemail;
-    this.message = newmessage;
+  setFormValue(newEmail, newMessage) {
+    this.email = newEmail;
+    this.message = newMessage;
   },
 
   saveToLocalStorage() {
@@ -47,10 +47,10 @@ function onSubmit(event) {
   if (formData.email === "" || formData.message === "") {
     return alert("Please fill in all fields");
   }
-  console.log(formData);
+   console.log("Email:", formData.email);
+  console.log("Message:", formData.message);
   localStorage.removeItem(LSTORAGE_KEY);
   formData.clear();
   formMessage.reset();
-formData.saveToLocalStorage();
 }
 getValueOfLocalstorage();
